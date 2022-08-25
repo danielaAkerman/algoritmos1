@@ -155,7 +155,7 @@ primIgualesA n (x:xs) | n == x = x : primIgualesA n xs
 primIgualesA' :: Int -> [Int] -> [Int]
 primIgualesA' n xs = takeWhile (== n) xs
 
--- 11
+-- 11.
 primIguales :: [Int] -> [Int]
 primIguales [] = []
 primIguales (x:y:xs) | x == y = x : primIguales (y:xs)
@@ -163,3 +163,4 @@ primIguales (x:y:xs) | x == y = x : primIguales (y:xs)
 
 primIguales' :: [Int] -> [Int]
 primIguales' (x:xs) = x: (primIgualesA' x xs)
+
