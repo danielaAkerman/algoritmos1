@@ -41,6 +41,9 @@ pertenece a (x:xs) | a == x = True
 -- 4. Programá las siguientes funciones que implementan los cuantificadores generales. 
 -- Notá que el segundo parámetro de cada función, es otra función!
 
+-- Auxiliar
+duplica x = 2 * x
+
 paratodo' :: [a] -> (a -> Bool) -> Bool
 paratodo' [] f = True
 paratodo' (x:xs) f | f x == True = paratodo' xs f 
@@ -50,9 +53,6 @@ existe' :: [a] -> (a -> Bool) -> Bool
 existe' [] f = False
 existe' (x:xs) f | f x == True = True
                  | otherwise = existe' xs f
-
--- Auxiliar
-duplica x = 2 * x
 
 sumatoria' :: [a] -> (a -> Int) -> Int
 sumatoria' [] f = 0
@@ -68,8 +68,8 @@ productoria' (x:xs) f = f x * productoria' xs f
 -- Auxiliar
 esTrue x = x == True
 
-paratodo1 :: [Bool] -> Bool
-paratodo1 xs = paratodo' xs esTrue
+paratodo'' :: [Bool] -> Bool
+paratodo'' xs = paratodo' xs esTrue
 
 -- 6. Utilizando las funciones del ejercicio 4, programá las siguientes funciones por composición,
 -- sin usar recursión ni análisis por casos.
@@ -164,3 +164,16 @@ primIguales (x:y:xs) | x == y = x : primIguales (y:xs)
 primIguales' :: [Int] -> [Int]
 primIguales' (x:xs) = x: (primIgualesA' x xs)
 
+-- MILTON NAHUEL CANDIA17:15
+-- cuantGen :: (b -> b -> b) -> b -> [a] -> (a -> b) -> b 
+-- cuantGen _ e [] _ = e
+-- cuantGen op e (x:xs) t = op (t x) (cuantGen op e (xs) t)
+-- lo hice si
+-- Tomás Joaquín Montes17:15
+-- ponele que si queres una sumatoria haces 
+-- cuantGen + 0 xs t
+-- MILTON NAHUEL CANDIA17:15
+-- si
+-- asi
+-- Tomás Joaquín Montes17:15
+-- porque + es el operador, 0 es el neutro, xs la lista y t el termino
