@@ -39,3 +39,31 @@ minimoElemento' (x:y:xs) | x <= y = minimoElemento' (x:xs)
 -- 3C
 -- minimoElemento [Fa, La, Sol, Re, Fa]
 -- Re
+
+-- 4A
+
+-- Ingreso es un sinonimo de tipo (permite definir un nuevo nombre para un tipo ya existente)
+type Ingreso = Int
+
+-- Cargo y Area son tipos enumerados (Valores finitos. Enumera cada uno)
+data Cargo = Titular | Asociado | Adjunto | Asistente | Auxiliar deriving (Eq, Ord, Show)
+data Area = Administrativa | Ensenanza | Economica | Postgrado
+
+-- Persona es un tipo algebraico (tienen constructores que llevan parámetros)
+data Persona = Decane | Docente Cargo | NoDocente Area | Estudiante Carrera Ingreso
+
+-- 4B 
+-- El constructor DOCENTE es de tipo algebraico
+
+-- 4C
+
+-- dada una lista de personas xs, y un cargo c, 
+-- devuelve la cantidad de docentes incluidos en xs que poseen el cargo c.
+
+cuantos_doc :: [Persona] -> Cargo -> Int
+cuantos_doc [] c = 0
+-- k :: Cargo 
+-- c :: Cargo
+cuantos_doc ((Docente k): xs) c | c == k = 1 + cuantos_doc xs c 
+                                | otherwise = cuantos_doc xs c 
+cuantos_doc (_: xs) c = cuantos_doc xs c 
