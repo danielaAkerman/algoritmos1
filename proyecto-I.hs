@@ -163,17 +163,3 @@ primIguales (x:y:xs) | x == y = x : primIguales (y:xs)
 
 primIguales' :: [Int] -> [Int]
 primIguales' (x:xs) = x: (primIgualesA' x xs)
-
--- MILTON NAHUEL CANDIA17:15
--- cuantGen :: (b -> b -> b) -> b -> [a] -> (a -> b) -> b 
--- cuantGen _ e [] _ = e
--- cuantGen op e (x:xs) t = op (t x) (cuantGen op e (xs) t)
--- lo hice si
--- Tomás Joaquín Montes17:15
--- ponele que si queres una sumatoria haces 
--- cuantGen + 0 xs t
--- MILTON NAHUEL CANDIA17:15
--- si
--- asi
--- Tomás Joaquín Montes17:15
--- porque + es el operador, 0 es el neutro, xs la lista y t el termino
