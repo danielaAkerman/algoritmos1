@@ -123,15 +123,8 @@ instance Ord NotaMusical
      (Nota n1 a1) <= (Nota n2 a2) =
         sonidoCromatico (Nota n1 a1) <= sonidoCromatico (Nota n2 a2)
 
-
-
-
 -- 6A
--- data Maybe a = Nothing | Just a
 
--- dividir :: Int -> Int -> Maybe Int
--- dividir x 0 = Nothing
--- dividir x y = Just ( x `div` y )
 
 primerElemento :: [a] -> Maybe a
 primerElemento [] = Nothing
@@ -185,15 +178,43 @@ busca (Encolada persona cola) cargo
 
 
 
--- -- 8
--- data ListaAsoc a b = Vacia | Nodo a b ( ListaAsoc a b )
+-- 8
+data ListaAsoc a b = Vacia | Nodo a b ( ListaAsoc a b ) deriving Show
 
--- la_concat :: ListaAsoc a b -> ListaAsoc a b -> ListaAsoc a b
--- la_concat Vacia d = d
--- la_concat (Nodo a b r) d = Nodo a b ( la_concat r b )
+type Diccionario = ListaAsoc String String
+type Padron = ListaAsoc Int String
+
+type GuiaTelef = ListaAsoc String Int
 
 
--- la_busca :: Eq a => ListaAsoc a b -> a -> Maybe b
--- la_busca Vacia x = Nothing
--- la_busca ( Nodo a b xs) x | x == a = Just b 
---                           | x /=a = la_busca xs x 
+la_long :: ListaAsoc a b -> Int
+la_long Vacia = 0
+la_long (Nodo _ _ la) = 1 + la_long la
+
+la_concat :: ListaAsoc a b -> ListaAsoc a b -> ListaAsoc a b
+la_concat Vacia la2 = la2
+la_concat la1 Vacia = la1
+la_concat (Nodo a b la1) la2 = Nodo a b (la_concat la1 la2)
+
+la_agregar :: ListaAsoc a b -> a -> b -> ListaAsoc a b
+la_agregar la a b = Nodo a b la
+
+la_pares :: ListaAsoc a b -> [(a, b)]
+la_pares Vacia = []
+la_pares (Nodo a b la) = (a, b) : la_pares la
+
+la_busca :: Eq a => ListaAsoc a b -> a -> Maybe b
+la_busca Vacia _ = Nothing
+la_busca (Nodo a b la) a' 
+  | a == a' = Just b
+  |otherwise = la_busca la a'
+
+la_borrar :: Eq a => a -> ListaAsoc a b -> ListaAsoc a b
+la_borrar _ Vacia = Vacia 
+la_borrar a' (Nodo a b la)
+  | a' == a = la
+  | otherwise = Nodo a b (la_borrar a' la)
+
+-- 9
+data Arbol a = Hoja | Rama (Arbol a) a (Arbol a)
+
