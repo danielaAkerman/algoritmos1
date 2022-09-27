@@ -216,5 +216,19 @@ la_borrar a' (Nodo a b la)
   | otherwise = Nodo a b (la_borrar a' la)
 
 -- 9
-data Arbol a = Hoja | Rama (Arbol a) a (Arbol a)
+data Arbol a = Hoja | Rama (Arbol a) a (Arbol a) deriving Show
 
+a_long :: Arbol a -> Int 
+a_long Hoja = 0
+a_long (Rama l e r) = 1 + a_long l + a_long r
+
+a_hojas :: Arbol a -> Int
+a_hojas Hoja = 1
+a_hojas (Rama l e r) = a_hojas l + a_hojas r
+
+a_inc :: Num a => Arbol a -> Arbol a
+a_inc (Rama l e r) = Rama (a_inc l) (e + 1) (a_inc r) 
+
+a_map :: (a -> b) -> Arbol a -> Arbol b
+a_map _ Hoja = Hoja 
+a_map f (Rama l e r) = Rama (a_map f l) (f e) (a_map f r)
