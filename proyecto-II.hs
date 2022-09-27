@@ -46,10 +46,10 @@ type Ingreso = Int
 
 -- Cargo y Area son tipos enumerados (Valores finitos. Enumera cada uno)
 data Cargo = Titular | Asociado | Adjunto | Asistente | Auxiliar deriving Eq
-data Area = Administrativa | Ensenanza | Economica | Postgrado 
+data Area = Administrativa | Ensenanza | Economica | Postgrado deriving Eq
 
 -- Persona es un tipo algebraico (tienen constructores que llevan parámetros)
-data Persona = Decane | Docente Cargo | NoDocente Area | Estudiante Carrera Ingreso 
+data Persona = Decane | Docente Cargo | NoDocente Area | Estudiante Carrera Ingreso deriving Eq
 
 -- 4B 
 -- Docente :: Cargo -> Persona
@@ -140,7 +140,7 @@ primerElemento (x:xs) = Just x
 -- 7
 
 data Cola = VaciaC | Encolada Persona Cola 
-
+-- Primer elemento a la Derecha
 atender :: Cola -> Maybe Cola
 atender VaciaC = Nothing
 atender (Encolada p c) = Just c
@@ -149,9 +149,22 @@ encolar :: Persona -> Cola -> Cola
 encolar p VaciaC = Encolada p VaciaC
 encolar p (Encolada p' c) = Encolada p' (encolar p c) 
 
+-- Primer elemento a la Izquierda
+atender' :: Cola -> Maybe Cola
+atender' VaciaC = Nothing
+atender' (Encolada p c) = case atender' c of
+   Nothing -> undefined
+   Just c' -> undefined
+
+encolar' :: Persona -> Cola -> Cola
+encolar' p c = Encolada p c
+
 busca :: Cola -> Cargo -> Maybe Persona
-busca
-busca
+busca VaciaC cargo = Nothing
+busca (Encolada persona cola) cargo 
+  | persona == Docente cargo = Just (persona)
+  | otherwise = busca cola cargo
+          
 
 
 
