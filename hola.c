@@ -168,13 +168,278 @@
 // }
 
 // RESULTADOS
-// 1.a ejecución 1 = Ingreso: x = 900              - Salida:  x = 5; 
-// 1.a ejecución 2 = Ingreso: x = 234              - Salida:  x = 5; 
-// 1.a ejecución 3 = Ingreso: x = 555              - Salida:  x = 5; 
-// 1.b ejecución 1 = Ingreso: x = 8 ,    y= 9      - Salida:  x = 17 ,   y= 18   
-// 1.b ejecución 2 = Ingreso: x = 2 ,    y= 10     - Salida:  x = 12 ,   y= 20   
-// 1.b ejecución 3 = Ingreso: x = 8 ,    y= 800    - Salida:  x = 808 ,  y= 1600   
-// 1.c ejecución 1 = Ingreso: x = 44 ,   y= 600    - Salida:  x = 1244 , y= 1200   
-// 1.c ejecución 2 = Ingreso: x = 1000 , y= 1      - Salida:  x = 1002 , y= 2   
-// 1.c ejecución 3 = Ingreso: x = 6 ,    y= 0      - Salida:  x = 6 ,    y= 0   
+// 1.a ejecución 1 = Ingreso: x = 900              - Salida:  x = 5;
+// 1.a ejecución 2 = Ingreso: x = 234              - Salida:  x = 5;
+// 1.a ejecución 3 = Ingreso: x = 555              - Salida:  x = 5;
+// 1.b ejecución 1 = Ingreso: x = 8 ,    y= 9      - Salida:  x = 17 ,   y= 18
+// 1.b ejecución 2 = Ingreso: x = 2 ,    y= 10     - Salida:  x = 12 ,   y= 20
+// 1.b ejecución 3 = Ingreso: x = 8 ,    y= 800    - Salida:  x = 808 ,  y= 1600
+// 1.c ejecución 1 = Ingreso: x = 44 ,   y= 600    - Salida:  x = 1244 , y= 1200
+// 1.c ejecución 2 = Ingreso: x = 1000 , y= 1      - Salida:  x = 1002 , y= 2
+// 1.c ejecución 3 = Ingreso: x = 6 ,    y= 0      - Salida:  x = 6 ,    y= 0
 
+// EJERCICIO 4
+
+// int main(void)
+// {
+//     int x, y;
+//     printf("Ingresa x\n\n");
+//     scanf("%d", &x);
+//     printf("Ingresa y\n\n");
+//     scanf("%d", &y);
+
+//     if (x >= y)
+//     {
+//         x = 0;
+//     }
+//     else
+//     {
+//         x = 2;
+//     }
+
+//     printf("x es %i, y es %i\n", x, y);
+//     return 0;
+// }
+
+// int main(void)
+// {
+//     int x, y, z, m;
+//     printf("Ingresa x\n\n");
+//     scanf("%d", &x);
+//     printf("Ingresa y\n\n");
+//     scanf("%d", &y);
+//     printf("Ingresa z\n\n");
+//     scanf("%d", &z);
+//     printf("Ingresa m\n\n");
+//     scanf("%d", &m);
+
+//     if (x < y)
+//     {
+//         m = x;
+//     }
+//     else
+//     {
+//         m = y;
+//     }
+
+//     if (m < z)
+//     {
+//         m = m;
+//     }
+//     else
+//     {
+//         m = z;
+//     }
+
+//     printf("x es %i, y es %i,z es %i,m es %i\n", x, y, z, m);
+//     return 0;
+// }
+// Este programa busca el menor valor de x, y, z.
+
+// EJERCICIO 5:
+// 5A:
+// int main(void)
+// {
+//     int i;
+//     printf("Ingresa i\n\n");
+//     scanf("%d", &i);
+
+//     while (i != 0)
+//     {
+//         i = i - 1;
+//     }
+
+//     printf("i es %i\n", i);
+//     return 0;
+// }
+
+// int main(void)
+// {
+//     int i;
+//     printf("Ingresa i\n\n");
+//     scanf("%d", &i);
+
+//     while (i != 0)
+//     {
+//         i = 0;
+//     }
+
+//     printf("i es %i\n", i);
+//     return 0;
+// }
+
+// 5B:
+
+// int main(void)
+// {
+//     int x, y, i;
+//     printf("Ingresa x\n\n");
+//     scanf("%d", &x);
+//     printf("Ingresa y\n\n");
+//     scanf("%d", &y);
+
+//     i = 0;
+
+//         while (x >= y)
+//     {
+//         x = x - y;
+//         i = i + 1;
+//     }
+
+//     printf("x es %i, y es %i, i es %i\n", x, y, i);
+//     return 0;
+// }
+
+// int main(void)
+// {
+//     int x, i;
+//     bool res;
+
+//     printf("Ingresa x\n\n");
+//     scanf("%d", &x);
+
+//     i = 2;
+//     res = true;
+
+//     while ((i < x) && res)
+//     {
+//         res = res && (x % i != 0);
+//         i = i + 1;
+//     }
+
+//     printf("x es %i, i es %i\n", x, i);
+//     return 0;
+// }
+
+// EJERCICIO 6:
+// 6A: entradas.c
+// int pedirEntero(void);
+// void imprimeEntero(int x);
+
+// int main(void)
+// {
+//     int x;
+//     x = pedirEntero();
+//     imprimeEntero(x);
+// }
+
+// int pedirEntero(void)
+// {
+//     int x;
+
+//     printf("Ingresa x\n\n");
+//     scanf("%d", &x);
+//     return x;
+// }
+
+// void imprimeEntero(int x)
+// {
+//     printf("x es %i\n", x);
+// }
+
+// 6B: entradas_bool.c
+
+// bool pedirBooleano(void);
+// void imprimeBooleano(bool x);
+
+// bool main(void)
+// {
+//     bool x;
+
+//     imprimeBooleano(x);
+// }
+
+// bool pedirBooleano(void)
+// {
+//     bool x;
+
+//     printf("Ingresa x\n\n");
+//     scanf("%d", &x);
+//     if (x != 0)
+//     {
+//         return 1;
+//     }
+//     return 0;
+// }
+
+// void imprimeBooleano(bool x)
+// {
+//     if (pedirBooleano())
+//     {
+//         printf("Verdadero\n");
+//     }
+//     else
+//     {
+//         printf("Falso\n");
+//     }
+// }
+
+// 6C:
+
+// int pedirEntero(void);
+// void imprimeEntero(x, y, z, m);
+
+// int main(void)
+// {
+//     int x = 0, y = 0, z = 0, m = 0;
+//     m = pedirEntero();
+//     imprimeEntero(m);
+// }
+
+// int pedirEntero(void)
+// {
+//     int x = 0, y = 0, z = 0, m = 0;
+
+//     printf("Ingresa x\n\n");
+//     scanf("%d", &x);
+//     printf("Ingresa y\n\n");
+//     scanf("%d", &y);
+//     printf("Ingresa z\n\n");
+//     scanf("%d", &z);
+
+//     if (x < y)
+//     {
+//         m = x;
+//     }
+//     else
+//     {
+//         m = y;
+//     }
+
+//     if (m < z)
+//     {
+//         m = m;
+//     }
+//     else
+//     {
+//         m = z;
+//     }
+//     return m;
+// }
+
+// void imprimeEntero(m)
+// {
+//     printf("m es %i\n", m);
+// }
+
+// Este programa busca el menor valor de x, y, z.
+
+// 6D: saludos.c
+
+// void imprimeHola(void);
+// void imprimeChau(void);
+
+// void main(void)
+// {
+// imprimeHola();
+// imprimeHola();
+// imprimeChau();
+// imprimeChau();
+// }
+
+// void imprimeHola(void){
+//     printf("Hola\n");
+// }
+// void imprimeChau(void){
+//     printf("Chau\n");
+// }
