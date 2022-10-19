@@ -87,43 +87,43 @@
 
 // EJERCICIO 2
 
-// int main(void)
-// {
-//     int x, y, z, b, w, res1, res2, res3;
+int main(void)
+{
+    int x, y, z, b, w, res1, res2, res3;
 
-//     // Solicito el ingreso de las variables x, y, z.
+    // Solicito el ingreso de las variables x, y, z.
 
-//     printf("Ingresa x\n\n");
-//     scanf("%d", &x);
+    printf("Ingresa x\n\n");
+    scanf("%d", &x);
 
-//     printf("Ingresa y\n\n");
-//     scanf("%d", &y);
+    printf("Ingresa y\n\n");
+    scanf("%d", &y);
 
-//     printf("Ingresa z\n\n");
-//     scanf("%d", &z);
+    printf("Ingresa z\n\n");
+    scanf("%d", &z);
 
-//     printf("Ingresa b\n\n");
-//     scanf("%d", &b);
+    printf("Ingresa b\n\n");
+    scanf("%d", &b);
 
-//     printf("Ingresa w\n\n");
-//     scanf("%d", &w);
+    printf("Ingresa w\n\n");
+    scanf("%d", &w);
 
-//     res1 = x % 4 == 0;                      // True
-//     res2 = x + y == 0 && y - x == (-1) * z; // True
-//     res3 = !b && w;                         // False
+    res1 = x % 4 == 0;                      // True
+    res2 = x + y == 0 && y - x == (-1) * z; // True
+    res3 = !b && w;                         // False
 
-//     // Imprimo el resultado de las siguiente expresiones.
+    // Imprimo el resultado de las siguiente expresiones.
 
-//     printf("x es %i, y es %i, z es %i\n", x, y, z);
-//     printf("x mod 4 == 0 es el valor booleano %i\n", res1);
-//     printf("x + y == 0 && y - x == (-1) * z es el valor booleano %i\n", res2);
-//     printf("!b && w es el valor booleano %i\n", res3);
+    printf("x es %i, y es %i, z es %i\n", x, y, z);
+    printf("x mod 4 == 0 es el valor booleano %i\n", res1);
+    printf("x + y == 0 && y - x == (-1) * z es el valor booleano %i\n", res2);
+    printf("!b && w es el valor booleano %i\n", res3);
 
-//     // Resultado:
-//     // x=4, y=-4 , z=8, b=1, w=1;
+    // Resultado:
+    // x=4, y=-4 , z=8, b=1, w=1;
 
-//     return 0;
-// }
+    return 0;
+}
 
 // EJERCICIO 3:
 // Traduccion de programas:
@@ -423,6 +423,9 @@
 // }
 
 // Este programa busca el menor valor de x, y, z.
+// En esta versión el código queda muy prolijo 
+// ya que se separa en funciones las responsabilidades del programa.
+
 
 // 6D: saludos.c
 
