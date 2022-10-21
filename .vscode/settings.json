@@ -2,7 +2,8 @@
     "files.associations": {
         "assert.h": "c",
         "stdio.h": "c",
-        "cstdlib": "c"
+        "cstdlib": "c",
+        "stdlib.h": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }
