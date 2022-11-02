@@ -13,8 +13,6 @@ struct datos_t
 
 struct datos_t stats(float a[], int tam)
 {
-    // calcula el mínimo, el máximo, y el promedio de un arreglo no vacío de números float
-    // un único ciclo
 
     int i = 0;
     float suma_elementos = 0;

@@ -16,7 +16,6 @@ struct asoc
 
 bool asoc_existe(struct asoc a[], int tam, clave_t c)
 {
-    // indicar si la clave c se encuentra en el arreglo de asociaciones a[].
     bool resultado = false;
     int i = 0;
 

@@ -3,10 +3,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
-#include <assert.h>
 
-// recibe un arreglo y su tama ̃no como argumento, y devuelve la suma de sus elementos.
 int sumatoria(int a[], int tam)
 {
     int j = 0;
@@ -22,7 +19,6 @@ int sumatoria(int a[], int tam)
 
 int main(void)
 {
-    // pedir los datos del arreglo al usuario asumiendo un tama ̃no constante.
     int size = 7;
     int a[size];
     int i = 0;

@@ -6,10 +6,6 @@
 #include <stdbool.h>
 #include <assert.h>
 
-// {Pre: x = X, y = Y}
-// x, y := x + 1, x + y
-// {Post: x = X + 1, y = X + Y}
-
 void imprimirResultado(int x, int y)
 {
     printf("El valor de x es %i\n", x);

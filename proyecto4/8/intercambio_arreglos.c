@@ -3,8 +3,6 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
-#include <assert.h>
 
 void intercambiar(int a[], int tam, int i, int j)
 {

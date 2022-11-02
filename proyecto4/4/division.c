@@ -3,14 +3,12 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
-#include <assert.h>
 
 struct div_t
 {
     int fst;
     int snd;
-}; //PUNTO Y COMA
+};
 
 struct div_t division(int dividendo, int divisor)
 {

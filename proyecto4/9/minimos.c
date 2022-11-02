@@ -3,8 +3,6 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
-#include <assert.h>
 #include <limits.h>
 
 int minimo_pares(int a[], int tam)
