@@ -158,26 +158,6 @@ busca (Encolada persona cola) cargo
   | persona == Docente cargo = Just (persona)
   | otherwise = busca cola cargo
           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -- 8
 data ListaAsoc a b = Vacia | Nodo a b ( ListaAsoc a b ) deriving Show
 
